@@ -22,7 +22,15 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
             List<Genero> lista = ctrlg.ListarGeneros();
             gdvGeneros.DataSource = lista.OrderBy(c => c.Categoria);
             gdvGeneros.DataBind();
+
+          /*  if (!IsPostBack)
+            {
+                GeneroController generocontroller = new GeneroController();
+                ddlGenero.DataSource = generocontroller.ListarGenerosAtivos();
+                ddlGenero.DataBind();
+            }*/
         }
+
 
         protected void AtualizaLista()
         {
@@ -39,5 +47,34 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
             Response.Redirect("Editar.aspx");
         }
 
+        protected void btnEditarFilmes_Click(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            Filme filme = new Filme();
+            filme.Nome = txtNomeFilme.Text;
+            filme = ctrlf.buscarFilmePorNome(filme);
+            if (filme != null)
+            {
+                filme.Nome = txtNovoNome.Text;
+                filme.Sinopse = txtSinopse.Text;
+                //filme.Genero.Id = int.Parse(ddlGenero.SelectedValue);
+                filme.Ativo = true;
+                ctrlf.Editar(filme);
+                AtualizaLista();
+            }
+        }
+
+        protected void btnEditarGenero_Click(object sender, EventArgs e)
+        {
+            Genero genero = new Genero();
+            genero.Categoria = txtNomeCategoria.Text;
+            genero = ctrlg.buscarGeneroPorNome(genero);
+            if (genero != null)
+            {
+                genero.Categoria = txtNovoGenero.Text;
+                ctrlg.Editar(genero);
+                AtualizaLista();
+            }
+        }
     }
 }

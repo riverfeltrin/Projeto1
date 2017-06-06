@@ -19,7 +19,8 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
             gdvFilmeGenero.DataSource = lista.OrderBy(c => c.Categoria);
             gdvFilmeGenero.DataBind();
 
-            if(!IsPostBack)
+
+            if (!IsPostBack)
             {
                 GeneroController generocontroller = new GeneroController();
                 ddlGenero.DataSource = generocontroller.ListarGenerosAtivos();
@@ -46,7 +47,7 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
                 filme.Nome = txtNomeFilme.Text;
                 filme.Sinopse = txtSinopse.Text;
                 genero.Id = int.Parse(ddlGenero.SelectedValue);//int.Parse(txtBoxGenero.Text);
-                //filme.Genero = generocontroller.BuscarGeneroPorId(genero);
+                filme.Genero = generocontroller.BuscarGeneroPorId(genero);
                 filme.Ativo = true;
                 ctrl.AdicionarFilme(filme);
             }

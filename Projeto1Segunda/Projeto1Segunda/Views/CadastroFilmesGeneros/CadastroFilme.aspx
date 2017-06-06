@@ -18,7 +18,7 @@
 
         <asp:Label ID="lblEscolhaGenero" runat="server" Text="Escolha a categoria no painel: "></asp:Label><br />
 
-        <asp:DropDownList ID="ddlGenero" runat="server" DataValueField="Id" DataTextField="Categoria"></asp:DropDownList>
+        <asp:DropDownList ID="ddlGenero" runat="server" DataTextField="Categoria" DataValueField="Id"></asp:DropDownList>
         <asp:Button ID="btnSalvarFilme" runat="server" Text="Salvar" OnClick="btnSalvarFilme_Click" Width="49px" /><br />
         <br />
         <asp:Button ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />

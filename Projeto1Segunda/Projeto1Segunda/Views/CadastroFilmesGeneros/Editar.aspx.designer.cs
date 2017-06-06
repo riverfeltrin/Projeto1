@@ -40,6 +40,24 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros {
         protected global::System.Web.UI.WebControls.TextBox txtNomeFilme;
         
         /// <summary>
+        /// lblNovoNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNovoNome;
+        
+        /// <summary>
+        /// txtNovoNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNovoNome;
+        
+        /// <summary>
         /// lblSinopse control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,15 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSinopse;
+        
+        /// <summary>
+        /// btnEditarFilmes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditarFilmes;
         
         /// <summary>
         /// lblFilmes control.
@@ -76,15 +103,6 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros {
         protected global::System.Web.UI.WebControls.GridView gdvFilmes;
         
         /// <summary>
-        /// btnEditarFilmes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditarFilmes;
-        
-        /// <summary>
         /// lblEditarCategoria control.
         /// </summary>
         /// <remarks>
@@ -94,13 +112,40 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros {
         protected global::System.Web.UI.WebControls.Label lblEditarCategoria;
         
         /// <summary>
-        /// txtEditarCategoria control.
+        /// txtNomeCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditarCategoria;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeCategoria;
+        
+        /// <summary>
+        /// lblNovogenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNovogenero;
+        
+        /// <summary>
+        /// txtNovoGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNovoGenero;
+        
+        /// <summary>
+        /// btnEditarGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditarGenero;
         
         /// <summary>
         /// lblGeneros control.
@@ -119,15 +164,6 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gdvGeneros;
-        
-        /// <summary>
-        /// btnEditarGenero control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditarGenero;
         
         /// <summary>
         /// btnVoltar control.
