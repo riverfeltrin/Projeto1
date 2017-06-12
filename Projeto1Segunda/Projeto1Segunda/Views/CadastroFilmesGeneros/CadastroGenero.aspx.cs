@@ -11,6 +11,7 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
 {
     public partial class CadastroGenero1 : System.Web.UI.Page
     {
+        string script;
         protected void Page_Load(object sender, EventArgs e)
         {
             GeneroController ctrl = new GeneroController();
@@ -36,7 +37,18 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
             {
                 genero.Categoria = txtNomeCategoria.Text;
                 genero.Ativo = true;
-                ctrl.Adicionar(genero);
+                if(ctrl.Adicionar(genero) == true)
+                {
+                    script = "alert(\"Sucesso!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    script = "alert(\"Gênero já cadastrado!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             txtNomeCategoria.Text = "";
             AtualizaLista();
@@ -57,6 +69,11 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("PaginaInicial.aspx");
+        }
+
+        protected void btnCadastroFilmes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CadastroFilme.aspx");
         }
     }
 }

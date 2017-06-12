@@ -8,13 +8,23 @@ namespace Projeto1Segunda.Controllers
 {
     public class FilmeController : BasePage
     {
-        public void AdicionarFilme(Filme filme)
+        public bool AdicionarFilme(Filme filme)
         {
-            if(filme != null)
+            try
             {
-                contexto.Filmes.Add(filme);
-                contexto.SaveChanges();
+                if (filme != null)
+                {
+                    contexto.Filmes.Add(filme);
+                    contexto.SaveChanges();
+                    return true;
+                }
+                return false;
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public List<Filme> ListarFilmesAtivos()

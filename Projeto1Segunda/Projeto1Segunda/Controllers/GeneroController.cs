@@ -8,12 +8,21 @@ namespace Projeto1Segunda.Controllers
 {
     public class GeneroController : BasePage
     {
-        public void Adicionar(Genero genero)
+        public bool Adicionar(Genero genero)
         {
-            if (genero != null)
+            try
             {
-                contexto.Generos.Add(genero);
-                contexto.SaveChanges();
+                if (genero != null)
+                {
+                    contexto.Generos.Add(genero);
+                    contexto.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
@@ -40,11 +49,19 @@ namespace Projeto1Segunda.Controllers
 
         public void Excluir(Genero genero)
         {
-            genero.Ativo = false;
+            try
+            {
+                genero.Ativo = false;
 
-            contexto.Entry(genero).State = System.Data.Entity.EntityState.Deleted;
+                contexto.Entry(genero).State = System.Data.Entity.EntityState.Deleted;
 
-            contexto.SaveChanges();
+                contexto.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
         public void Editar(Genero genero)
         {

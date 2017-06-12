@@ -11,6 +11,7 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
 {
     public partial class CadastroGenero : System.Web.UI.Page
     {
+        string script;
         protected void Page_Load(object sender, EventArgs e)
         {
             FilmeController ctrl = new FilmeController();
@@ -37,6 +38,7 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
 
         protected void btnSalvarFilme_Click(object sender, EventArgs e)
         {
+        
             GeneroController generocontroller = new GeneroController();
             FilmeController ctrl = new FilmeController();
             Filme filme = new Filme();
@@ -49,7 +51,18 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
                 genero.Id = int.Parse(ddlGenero.SelectedValue);//int.Parse(txtBoxGenero.Text);
                 filme.Genero = generocontroller.BuscarGeneroPorId(genero);
                 filme.Ativo = true;
-                ctrl.AdicionarFilme(filme);
+                if(ctrl.AdicionarFilme(filme) == true)
+                {
+                    script = "alert(\"Sucesso!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
+                else
+                {
+                    script = "alert(\"Não foi possível cadastrar!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
             txtNomeFilme.Text = "";
             txtSinopse.Text = "";
@@ -79,6 +92,11 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("PaginaInicial.aspx");
+        }
+
+        protected void btnCadastroGenero_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CadastroGenero.aspx");
         }
     }
 }

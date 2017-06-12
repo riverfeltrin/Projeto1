@@ -44,7 +44,7 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Editar.aspx");
+            Response.Redirect("PaginaInicial.aspx");
         }
 
         protected void btnEditarFilmes_Click(object sender, EventArgs e)
@@ -62,6 +62,10 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
                 ctrlf.Editar(filme);
                 AtualizaLista();
             }
+            txtNomeFilme.Text = "";
+            txtNovoNome.Text = "";
+            txtSinopse.Text = "";
+
         }
 
         protected void btnEditarGenero_Click(object sender, EventArgs e)
@@ -75,6 +79,8 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
                 ctrlg.Editar(genero);
                 AtualizaLista();
             }
+            txtNomeCategoria.Text = "";
+            txtNovoGenero.Text = "";
         }
     }
 }

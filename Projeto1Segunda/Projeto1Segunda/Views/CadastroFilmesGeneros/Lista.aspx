@@ -17,4 +17,6 @@
         <asp:Button ID="btnExcluirGenero" runat="server" Text="Excluir Gênero" OnClick="btnExcluirGenero_Click" /><br /><br/>
         <asp:Button ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" Width="96px" />
     </div>
+
+    <div id="divMensagens" runat="server"></div>
 </asp:Content>

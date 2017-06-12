@@ -54,15 +54,27 @@ namespace Projeto1Segunda.Views.CadastroFilmesGeneros
 
         protected void btnExcluirGenero_Click(object sender, EventArgs e)
         {
-            Genero genero = new Genero();
-            genero.Id = int.Parse(txtBoxIdGenero.Text);
-            genero = ctrlg.BuscarGeneroPorId(genero);
-            if(genero != null)
+            try
             {
-                ctrlg.Excluir(genero);
-                AtualizaLista();
+                Genero genero = new Genero();
+                genero.Id = int.Parse(txtBoxIdGenero.Text);
+                genero = ctrlg.BuscarGeneroPorId(genero);
+                if (genero != null)
+                {
+                    ctrlg.Excluir(genero);
+                    AtualizaLista();
+                }
+                txtBoxIdGenero.Text = string.Empty;
             }
-            txtBoxIdGenero.Text = string.Empty;
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted."))
+                {
+                    divMensagens.InnerHtml = "Erro ao salvar, o gênero tem filmes vinculados";
+                }
+                  
+            }
+           
         }
     }
 }

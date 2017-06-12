@@ -22,7 +22,7 @@
         <asp:Button ID="btnSalvarFilme" runat="server" Text="Salvar" OnClick="btnSalvarFilme_Click" Width="49px" /><br />
         <br />
         <asp:Button ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-        
+        <asp:Button ID="btnCadastroGenero" runat="server" Text="Gênero" OnClick="btnCadastroGenero_Click" />
     </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
